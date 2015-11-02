@@ -1,0 +1,11 @@
+def factorial(n):
+	xyz = 1
+	while n>=1:
+		xyz=xyz*n
+		n=n-1
+	return xyz
+print(factorial(1))
+print(factorial(2))
+print(factorial(3))
+print(factorial(4))
+print(factorial(5))
