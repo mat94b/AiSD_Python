@@ -1,9 +1,9 @@
+# v.2.0
 import random
 
 class RandomQueue:
 	def __init__(self):
 		self.maximum=20
-		self.minimum = 0
 		self.listOfElements = list()
 		self.n = 0
 
@@ -29,7 +29,7 @@ class RandomQueue:
 		if not self.listOfElements:
 			raise IndexError
 		self.n -= 1
-		helper = random.randint(self.minimum, self.n)
+		helper = random.randint(0, self.n)
 		result = self.listOfElements[helper]
-		self.listOfElements.remove(result)
+		del listOfElements[helper]
 		return result
