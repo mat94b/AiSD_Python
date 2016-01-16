@@ -1,6 +1,11 @@
+# v.2.0
 import math
 
 def solve1(a, b, c):
+	if (a==None or a==0) and b!=None and c!=None:
+		b = float(b); c = float(c)
+		res = float((-c)/b)
+		print(str(res))
 	if a==None or b==None or c==None or a==0:
 		return None
 	delta=b*b-(4*a*c)

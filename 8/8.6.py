@@ -1,3 +1,4 @@
+# v.2.0
 arr = [[0 for x in range(1000)] for x in range(1000)] 
 	
 def PR(m,n):
@@ -30,7 +31,11 @@ def PI(m,n):
 			return 0.0
 		elif m==0 and n>0:
 			return 1.0
-		return 0.5 * (PI(m-1, n) + PI(m, n-1))
-	except ValueError:
-		return None
-		
+		if arr[m][n] == 0:
+			h = 0.5 * (PI(m-1, n) + PI(m, n-1))
+			arr[m][n] = h
+			return arr[m][n]
+		else:
+			return arr[m][n]
+	except ValueError: 
+		return None	
