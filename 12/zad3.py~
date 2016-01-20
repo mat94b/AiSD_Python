@@ -10,6 +10,7 @@ def selection_sort(L):
 
 def mediana(L,left,right):    
 	selection_sort(L)
+	print L
 	if len(L)%2 is 1:
 		return L[(len(L)+1)/2]
 	else:
