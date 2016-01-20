@@ -14,7 +14,7 @@ class RandomQueue:
 			return False
 
 	def is_full(self):
-		if self.n is self.maximum:
+		if self.listOfElements is self.maximum:
 			return True
 		else:
 			return False
