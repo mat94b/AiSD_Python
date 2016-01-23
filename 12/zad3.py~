@@ -1,5 +1,3 @@
-# v.2.0
-
 def selection_sort(L):
     for step in range(len(L)):
         location_of_smallest = step
