@@ -55,3 +55,12 @@ class Node:
 					return node
 		except Exception:
 			print("Lista jest pusta")
+test = None
+test = Node(1,test)
+test = Node(2,test)
+Node.remove_tail(test)
+Node.remove_head(test)
+Node.remove_head(test)
+while test:
+	print test.data
+	test = test.next
