@@ -6,13 +6,6 @@ class Node:
 	def __str__(self):
 		return str(self.data)
 
-	def print_list(node):
-		print("L: ")
-		while node:
-			print(node)
-			node = node.next
-		print()
-
 	@staticmethod
 	def merge(node1, node2):
 		if(node1 is None) and (node2 is None):
