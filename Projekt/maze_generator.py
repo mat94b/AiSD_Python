@@ -1,5 +1,5 @@
-from random import shuffle
-from random import randrange
+import random
+import sys
 
 
 def decoreStart():
@@ -18,25 +18,24 @@ def make_maze(w, h, o):
 	def walk(x, y):
 		vis[y][x] = 1
 		d = [(x - 1, y), (x, y + 1), (x + 1, y), (x, y - 1)]
-		shuffle(d)
+		random.shuffle(d)
 		for (xx, yy) in d:
 			if vis[yy][xx]: continue
 			if xx == x: hor[max(y, yy)][x] = "+  "
 			if yy == y: ver[y][max(x, xx)] = "   "
 			walk(xx, yy)
-	walk(randrange(w), randrange(h))
-	if(o is True):
-		for (a, b) in zip(hor, ver):
-			print(''.join(a + ['\n'] + b))
-	elif(o is False):
-		name = raw_input("|     Nazwa pliku: ")
-		if (name is ""):
-			name = "labirynt"
-		plik = open(name, 'w')
+	walk(random.randrange(w), random.randrange(h))
+	def saveToFile(hor, ver):
+		plik = open('labirynt', 'w')
 		for (a, b) in zip(hor, ver):
 			plik.write(''.join(a + ['\n'] + b))
 			plik.write('\n')
 		plik.close()
+	saveToFile(hor,ver)
+	if o is True:
+		f = open('labirynt', 'r')
+		sys.stdout.write(f.read())
+		
 
 def kwadratowe():
 	make_maze(2, 2, True)
